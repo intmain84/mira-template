@@ -1,7 +1,12 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/mira-template//_next/:path+",
+        "destination": "/mira-template/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [
