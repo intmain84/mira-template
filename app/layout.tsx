@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins } from "next/font/google"; //Change if you want to use a different font from Google Fonts
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const mainFont = Poppins({
+  //Change if you want to use a different font from Google Fonts
+  variable: "--font-main",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"], //Change if you want to use different font weights from Google Fonts
 });
 
 export const metadata: Metadata = {
@@ -20,9 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
-        <Navbar className="fixed top-0 inset-x-0 z-50 h-24" />
+    <html lang="en" className={`${mainFont.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col p-px">
+        <Navbar className="fixed top-0 inset-x-0 z-50 h-24 bg-black" />
         <main className="flex-1 pt-24">{children}</main>
         <footer>Footer</footer>
       </body>

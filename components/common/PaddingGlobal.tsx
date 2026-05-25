@@ -2,9 +2,13 @@ import ContainerLarge from "./ContainerLarge";
 
 // Define padding classes for different screen sizes
 const paddings = {
-  base: "px-4",
-  md: "min-[768px]:px-12.5",
-  sm: "min-[480px]:px-5",
+  mobile: "px-4", // 0 - 479
+
+  mobileL: "min-[480px]:px-5", // 480 - 767
+
+  tablet: "min-[768px]:px-8", // 768 - 991
+
+  desktop: "min-[992px]:px-12", // 992+
 };
 
 export default function PaddingGlobal({
@@ -13,7 +17,9 @@ export default function PaddingGlobal({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`${paddings.base} ${paddings.sm} ${paddings.md}`}>
+    <div
+      className={`${paddings.desktop} ${paddings.tablet} ${paddings.mobileL} ${paddings.mobile}`}
+    >
       <ContainerLarge>{children}</ContainerLarge>
     </div>
   );
