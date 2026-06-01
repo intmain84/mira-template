@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google"; //Change if you want to use a different font from Google Fonts
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import StateWrapper from "@/components/StateWrapper";
 
 const mainFont = Poppins({
   //Change if you want to use a different font from Google Fonts
@@ -23,9 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${mainFont.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col p-px">
-        <Navbar className="fixed top-0 inset-x-0 z-50 h-24 bg-black" />
-        <main className="flex-1 pt-24">{children}</main>
-        <footer>Footer</footer>
+        <StateWrapper>{children}</StateWrapper>
       </body>
     </html>
   );

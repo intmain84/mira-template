@@ -1,9 +1,15 @@
 "use client";
 
 import { useScrollVisibility } from "@/hooks/useScrollVisibility";
+import { ModalType } from "@/types/modal";
 
-export default function Navbar({ className }: { className?: string }) {
-  const { visible, isScrolled } = useScrollVisibility();
+type NavbarProps = {
+  className?: string;
+  setModal?: (modal: ModalType) => void;
+};
+
+export default function Navbar({ className, setModal }: NavbarProps) {
+  const { visible, isScrolled } = useScrollVisibility(); // Show/hide Navbar based on scroll position
 
   return (
     <nav
@@ -14,7 +20,12 @@ export default function Navbar({ className }: { className?: string }) {
         ${className ?? ""}
       `}
     >
-      Navbar
+      <button
+        onClick={() => setModal?.("login")} // Open the login modal
+        className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-600"
+      >
+        Open modal
+      </button>
     </nav>
   );
 }
