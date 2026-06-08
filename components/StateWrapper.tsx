@@ -3,7 +3,7 @@
 import Navbar from "./Navbar";
 import { ModalType } from "@/types/modal";
 import { useState } from "react";
-import CallbackModal from "@/components/modals/CallbackModal";
+import CallbackModal from "./modals/CallbackModal";
 
 const StateWrapper = ({ children }: { children: React.ReactNode }) => {
   const [modal, setModal] = useState<ModalType | null>(null);
